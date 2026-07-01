@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursos — Controle Acadêmico</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>📚 Controle de Atividades Acadêmicas</h1>
+    <nav>
+      <a href="/index.html">Início</a>
+      <a href="/cursos.html">Cursos</a>
+      <a href="/alunos.html">Alunos</a>
+      <a href="/consultas.html">Consultas</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Cursos</h2>
+
+    <div class="barra">
+      <input type="text" id="busca" placeholder="Buscar por nome...">
+      <button onclick="carregarCursos()">Pesquisar</button>
+      <button onclick="abrirFormNovo()">+ Novo Curso</button>
+    </div>
+
+    <div id="mensagem" class="msg"></div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Código</th><th>Nome</th><th>Modalidade</th>
+          <th>Carga Horária</th><th>Criado em</th><th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="corpo-tabela"></tbody>
+    </table>
+  </main>
+
+  <!-- Modal de cadastro/edição -->
+  <div class="modal-bg" id="modal">
+    <div class="modal">
+      <h3 id="modal-titulo">Novo Curso</h3>
+      <input type="hidden" id="id_curso">
+      <label>Código</label>
+      <input type="text" id="codigo" maxlength="6">
+      <label>Nome</label>
+      <input type="text" id="nome">
+      <label>Modalidade</label>
+      <select id="modalidade">
+        <option value="Presencial">Presencial</option>
+        <option value="EAD">EAD</option>
+        <option value="Hibrido">Hibrido</option>
+      </select>
+      <label>Carga Horária (horas)</label>
+      <input type="number" id="carga_horaria" min="1">
+      <label>Data de Criação</label>
+      <input type="date" id="data_criacao">
+      <div class="modal-botoes">
+        <button onclick="salvarCurso()">Salvar</button>
+        <button class="btn-cinza" onclick="fecharForm()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/cursos.js"></script>
+</body>
+</html>

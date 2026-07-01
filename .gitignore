@@ -1,0 +1,13 @@
+# Dependências instaladas pelo npm (geradas automaticamente, não versionar)
+node_modules/
+
+# Logs
+npm-debug.log*
+*.log
+
+# Variáveis de ambiente (caso você crie um arquivo .env com senhas no futuro)
+.env
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db

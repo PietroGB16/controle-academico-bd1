@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alunos — Controle Acadêmico</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>📚 Controle de Atividades Acadêmicas</h1>
+    <nav>
+      <a href="/index.html">Início</a>
+      <a href="/cursos.html">Cursos</a>
+      <a href="/alunos.html">Alunos</a>
+      <a href="/consultas.html">Consultas</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Alunos</h2>
+
+    <div class="barra">
+      <input type="text" id="busca-nome" placeholder="Buscar por nome...">
+      <select id="busca-curso">
+        <option value="">Todos os cursos</option>
+      </select>
+      <button onclick="carregarAlunos()">Pesquisar</button>
+      <button onclick="abrirFormNovo()">+ Novo Aluno</button>
+    </div>
+
+    <div id="mensagem" class="msg"></div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Matrícula</th><th>Nome</th><th>Email</th>
+          <th>Curso</th><th>Nascimento</th><th>Ingresso</th><th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="corpo-tabela"></tbody>
+    </table>
+  </main>
+
+  <!-- Modal de cadastro/edição -->
+  <div class="modal-bg" id="modal">
+    <div class="modal">
+      <h3 id="modal-titulo">Novo Aluno</h3>
+      <input type="hidden" id="id_aluno">
+      <label>Matrícula</label>
+      <input type="text" id="matricula">
+      <label>Nome</label>
+      <input type="text" id="nome">
+      <label>Email</label>
+      <input type="email" id="email">
+      <label>Data de Nascimento</label>
+      <input type="date" id="data_nascimento">
+      <label>Data de Ingresso</label>
+      <input type="date" id="data_ingresso">
+      <label>Curso</label>
+      <select id="id_curso"></select>
+      <div class="modal-botoes">
+        <button onclick="salvarAluno()">Salvar</button>
+        <button class="btn-cinza" onclick="fecharForm()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/alunos.js"></script>
+</body>
+</html>

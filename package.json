@@ -1,0 +1,11 @@
+{
+  "name": "controle-academico-app",
+  "version": "1.0.0",
+  "description": "Controle de atividades academicas - API REST + front-end HTML/CSS/JS",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "dependencies": {
+    "express": "^4.19.2",
+    "mysql2": "^3.10.0"
+  }
+}
